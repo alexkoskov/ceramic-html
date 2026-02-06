@@ -1,0 +1,32 @@
+@use "/src/sass/base/mixins.scss" as *;
+@use "/src/sass/base/variables.scss" as *;
+
+.btn-shop {
+    @include button;
+    width: 230px;
+    height: 50px;
+    font-size: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+    .btn-shop {
+        &:hover {
+            background: $dark;
+            color: $light;
+        }
+
+        &:active {
+            border: none;
+            box-shadow: inset 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+            background: rgba(217, 217, 217, 0.1);
+            color: $dark;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .btn-shop {
+        width: 330px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,268 @@
+@use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/mixins.scss" as *;
+
+.touch {
+    padding-top: 60px;
+
+    &__wrapper {
+        margin-top: 60px;
+    }
+
+    &__img {
+        display: none;
+    }
+
+    &__fieldset {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    &__label {
+        color: $dark;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+    &__input {
+        // Frame 
+        width: 100%;
+        height: 48px;
+        // Auto layout 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px 15px;
+        box-sizing: border-box;
+        border: 1px solid rgba(226, 225, 229, 1);
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 1);
+
+        //font
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $dark;
+
+        &:focus {
+            border: none;
+            outline: 1px solid $dark;
+        }
+
+        &::placeholder {
+            color: $ui-disabled;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &__form {
+        display: block;
+        border: 1px solid black;
+        width: 340px;
+        text-align: left;
+    }
+
+    &__question {
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 130px;
+        padding: 10px 15px 10px 15px;
+
+        box-sizing: border-box;
+        border: 1px solid rgba(226, 225, 229, 1);
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 1);
+        //hide resize icon
+        resize: none;
+
+        //font
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 28px;
+        color: $dark;
+
+        &:focus {
+            border: none;
+            outline: 1px solid $dark;
+        }
+
+        &::placeholder {
+            color: $ui-disabled;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &__chbx {
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        margin-top: 20px;
+
+        a {
+            text-decoration: none;
+            color: rgba(162, 45, 198, 1);
+        }
+    }
+
+    &__box {
+        width: 15px;
+        height: 15px;
+        box-sizing: border-box;
+        border: 1px solid $dark;
+        border-radius: 2px;
+        cursor: pointer;
+
+        &:focus {
+            border: 1px solid $dark;
+        }
+    }
+
+    &__btn-send {
+        margin-top: 20px;
+        @include button;
+        /* Send Button */
+        width: 220px;
+        height: 40px;
+        //text
+        color: $dark;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        text-transform: uppercase;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $ceramic;
+            color: $dark;
+        }
+
+        &:disabled {
+            outline: none;
+            border: 1px solid $ui-disabled;
+            color: $ui-disabled;
+        }
+    }
+
+    &__ico {
+        display: none;
+    }
+
+    &__form {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .touch {
+
+        &__wrapper {
+            margin-top: 45px;
+        }
+
+        &__item {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &__form {
+            margin-left: 25px;
+            width: 300px;
+        }
+
+        &__textarea {
+            width: 300px;
+        }
+
+        &__ico {
+            display: block;
+            width: 85px;
+            height: 85px;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .touch {
+        &__wrapper {
+            margin-top: 80px;
+            row-gap: 40px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__item {
+            display: flex;
+            width: auto;
+            align-items: flex-end;
+            height: 500px;
+            column-gap: 165px;
+        }
+
+        &__img {
+            display: block;
+            width: 550px;
+            object-fit: contain;
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        &__input {
+            &:hover {
+                border: none;
+                outline: 1px solid $dark;
+            }
+        }
+
+        &__textarea {
+            &:hover {
+                border: none;
+                outline: 1px solid $dark;
+            }
+        }
+
+        &__chbx {
+            input {
+                &:hover {
+                    border: 1px solid $dark;
+                }
+            }
+        }
+
+        &__btn-send {
+            &:hover {
+                outline: none;
+                border: 1px solid $ceramic;
+                color: $ceramic;
+            }
+
+            &:active {
+                outline: none;
+                border: 1px solid $ceramic;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .touch {
+        padding-top: 100px;
+
+        &__img {
+            width: 575px;
+        }
+    }
+}
